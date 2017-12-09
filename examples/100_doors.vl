@@ -1,0 +1,12 @@
+discard <
+    i Loop
+        > i == 101
+            discard
+
+        > // i % 1 == 0
+            "door open" Eco
+        |
+            "door close" Eco
+        i + 1 Loop
+
+1.0 Loop

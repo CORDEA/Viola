@@ -1,0 +1,16 @@
+discard <
+    i Loop
+        > i == 101
+            discard
+
+        > i % 15 == 0
+            "fizzbuzz" Eco
+        | i % 3 == 0
+            "fizz" Eco
+        | i % 5 == 0
+            "buzz" Eco
+        |
+            i Eco
+        i + 1 Loop
+
+1 Loop

@@ -1,0 +1,15 @@
+discard <
+    i Loop
+        > i == 0
+            discard
+
+        i Eco "bottles of beer on the the wall."
+        i Eco "bottles of beer."
+        "Take one down, pass it around." Eco
+        j = i - 1
+        j Eco "bottles of beer on the wall."
+        "" Eco
+
+        j Loop
+
+99 Loop

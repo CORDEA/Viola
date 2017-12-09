@@ -1,0 +1,141 @@
+# "Eco" is Echo
+1 Eco
+b = 2
+c = 3 + 1
+b Eco
+c Eco "before"
+
+99 % 10 Eco
+
+tuple = (1,)
+
+# If statement
+> 2 == 1
+    "ng1" Eco
+    a = 1
+    a Eco
+| 1 == 2
+    "ng2" Eco
+    b Eco
+| 2 == 2
+    > 2 == 2
+        "in ok" Eco
+        > "a" == "a"
+            "in in ok" Eco
+    | 2 == 1
+        "in ng" Eco
+    |
+        "in ng" Eco
+| 1 == 1
+    "ng" Eco
+| b == 4
+    "ng3" Eco
+| "a" == "a"
+    "ng" Eco
+|
+    "ng4" Eco
+    c Eco
+
+> 2 == 1
+    "ng" Eco
+
+> 2 == 2
+    "ok" Eco
+
+| 2 == 1
+    "ng" Eco
+
+c Eco
+
+"method start" Eco
+
+# define CustomMethod
+# [Test]
+discard <
+    e CustomMethod f
+        > 2 == 2
+            > 2 == 2
+                "in ok" Eco
+        > 2 == 1
+            "method ng1" Eco
+        > e == 10
+            "method ok" Eco
+            discard
+        |
+            "method ok2" Eco
+        e Eco
+        f Eco
+        e + 1 CustomMethod f
+
+# call CustomMethod
+# c CustomMethod b
+
+"method end" Eco
+
+# raise "a" Undefined
+# > 2 != 2
+    # a CustomMethod b
+
+result = 1 + 1 <
+    g NeedReturn h
+        "need" Eco
+        i List'Add 12
+        a = i List'Get 0
+        a Eco
+
+a = b NeedReturn c
+result Eco
+"a =" Eco a
+
+a = 0
+a Eco
+
+"----" Eco
+i = List'Init
+i List'Add 2
+i List'Add 1
+i List'Add 0
+i List'Add "a"
+a = i List'Get 0
+i List'Get 0 Eco
+a Eco
+i List'Length Eco
+
+"-----" Eco
+i List'Contains "a" Eco
+
+i Eco
+
+a = 1 ** 2
+a Eco
+a = // 3
+a Eco
+a = // 3.0
+
+"----" Eco
+> T
+    a Eco
+
+list List'Add "a"
+list Eco
+
+"test.txt" File'OpenWrite "test!"
+a = "test.txt" File'Read
+a Eco
+
+f = "test.txt" File'Open "w"
+f File'Close
+
+e = 0..10
+e Eco 0..10
+
+a Eco
+
+"ls" System'RunCmd
+
+a = "ls"
+
+a System'RunCmd Eco
+
+e Test'Assert 0..10
+1 Test'Assert 1
