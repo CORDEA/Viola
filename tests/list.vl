@@ -1,0 +1,16 @@
+a = List'Init
+len = a List'Length
+len Test'Assert 0
+
+a List'Add 0
+len = a List'Length
+len Test'Assert 1
+
+i List'Add 0
+i Test'Assert a
+
+iv = i List'Get 0
+av = a List'Get 0
+iv Test'Assert av
+
+(i List'Get 0) Test'Assert (a List'Get 0)
