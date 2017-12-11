@@ -16,6 +16,7 @@
 
 import inspect
 
+from src.impl.error import IllegalMethodError
 from src.impl.model.reserved_method import ReservedMethod
 from src.impl.reserved.file import File
 from src.impl.reserved.list import List
@@ -72,7 +73,7 @@ class ReservedMethodCaller:
             defaults = len(arg_spec.defaults) if arg_spec.defaults is not None else 0
             if class_method_args - defaults <= args_len <= class_method_args:
                 return ReservedMethod(lst[0], lst[1], args)
-        print "error"
+        raise IllegalMethodError(name)
 
     def fire(self, rm):
         self = self
