@@ -7,5 +7,6 @@ Viola programming language.
 Run examples.
 
 ```bash
-$ PYTHONPATH=./ python src/viola.py examples/fizzbuzz.vl
+$ sudo pip install ply
+$ PYTHONPATH=./ src/viola examples/fizzbuzz.vl
 ```
